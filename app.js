@@ -8,12 +8,11 @@ const studyResRouter = require('./controllers/studyResources.js');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(middleware.requestLogger());
+app.use(middleware.requestLogger);
 
 app.use('/studyResources/branches',studyResRouter);
+//add testcomment
 
-app.use(middleware.unknownEndpoint());
-app.use(middleware.errorHandler());
-
-
+app.use(middleware.unknownEndpoint);
+app.use(middleware.errorHandler);
 module.exports = app;
